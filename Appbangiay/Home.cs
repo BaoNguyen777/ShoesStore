@@ -16,5 +16,10 @@ namespace Appbangiay
         {
             InitializeComponent();
         }
+
+        private void KhoHangTab_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
