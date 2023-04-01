@@ -16,7 +16,7 @@ namespace Appbangiay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formThemSP());
+            Application.Run(new Home());
         }
     }
 }

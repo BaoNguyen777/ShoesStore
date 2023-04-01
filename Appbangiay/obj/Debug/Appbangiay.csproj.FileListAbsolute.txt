@@ -10,3 +10,14 @@ C:\Users\Bao Nguyen\source\repos\Appbangiay\Appbangiay\obj\Debug\Appbangiay.exe
 C:\Users\Bao Nguyen\source\repos\Appbangiay\Appbangiay\obj\Debug\Appbangiay.pdb
 C:\Users\Bao Nguyen\source\repos\Appbangiay\Appbangiay\obj\Debug\Appbangiay.formThemSP.resources
 C:\Users\Bao Nguyen\source\repos\Appbangiay\Appbangiay\obj\Debug\Appbangiay.TrangChinh.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.csproj.AssemblyReference.cache
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.csproj.SuggestedBindingRedirects.cache
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.exe
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.pdb
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\bin\Debug\Appbangiay.exe.config
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\bin\Debug\Appbangiay.exe
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\bin\Debug\Appbangiay.pdb
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.Form1.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.Properties.Resources.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.csproj.GenerateResource.cache
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Debug\Appbangiay.csproj.CoreCompileInputs.cache
