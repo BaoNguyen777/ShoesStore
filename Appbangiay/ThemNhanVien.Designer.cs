@@ -264,6 +264,7 @@
             this.NhanVienTab.Text = "Nhân viên";
             this.NhanVienTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.NhanVienTab.UseVisualStyleBackColor = false;
+            this.NhanVienTab.Click += new System.EventHandler(this.NhanVienTab_Click);
             // 
             // KhoHangTab
             // 
@@ -280,6 +281,7 @@
             this.KhoHangTab.Text = "Kho hàng";
             this.KhoHangTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.KhoHangTab.UseVisualStyleBackColor = false;
+            this.KhoHangTab.Click += new System.EventHandler(this.KhoHangTab_Click);
             // 
             // DonHangTab
             // 
@@ -296,6 +298,7 @@
             this.DonHangTab.Text = "Đơn hàng";
             this.DonHangTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DonHangTab.UseVisualStyleBackColor = false;
+            this.DonHangTab.Click += new System.EventHandler(this.DonHangTab_Click);
             // 
             // panel2
             // 

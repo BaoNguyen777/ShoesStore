@@ -20,6 +20,8 @@ namespace Appbangiay
         private void DonHangTab_Click(object sender, EventArgs e)
         {
             Home fr = new Home();
+            fr.Size = new Size(1000, 800);
+            fr.StartPosition = FormStartPosition.CenterScreen;
             this.Hide();
             fr.ShowDialog();
             this.Close();
@@ -28,9 +30,16 @@ namespace Appbangiay
         private void NhanVienTab_Click(object sender, EventArgs e)
         {
             NhanVien fr = new NhanVien();
+            fr.Size = new Size(1000, 800);
+            fr.StartPosition = FormStartPosition.CenterScreen;
             this.Hide();
             fr.ShowDialog();
             this.Close();
+        }
+
+        private void KhoHang_Load(object sender, EventArgs e)
+        {
+            ;
         }
     }
 }

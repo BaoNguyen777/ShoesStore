@@ -296,6 +296,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "KhoHang";
             this.Text = "KhoHang";
+            this.Load += new System.EventHandler(this.KhoHang_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);

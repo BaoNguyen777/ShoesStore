@@ -25,6 +25,8 @@ namespace Appbangiay
         private void KhoHangTab_Click(object sender, EventArgs e)
         {
             KhoHang fr = new KhoHang();
+            fr.Size = new Size(1000, 800);
+            fr.StartPosition = FormStartPosition.CenterScreen;
             this.Hide();
             fr.ShowDialog();
             this.Close();
@@ -33,6 +35,8 @@ namespace Appbangiay
         private void NhanVienTab_Click(object sender, EventArgs e)
         {
             NhanVien fr = new NhanVien();
+            fr.Size = new Size(1000, 800);
+            fr.StartPosition = FormStartPosition.CenterScreen;
             this.Hide();
             fr.ShowDialog();
             this.Close();
