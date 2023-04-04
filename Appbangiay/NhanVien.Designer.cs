@@ -37,6 +37,7 @@
             this.KhoHangTab = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             this.DonHangTab.Text = "Đơn hàng";
             this.DonHangTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DonHangTab.UseVisualStyleBackColor = false;
+            this.DonHangTab.Click += new System.EventHandler(this.DonHangTab_Click);
             // 
             // label6
             // 
@@ -70,6 +72,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(250, 0);
@@ -92,6 +95,7 @@
             this.DoanhThuTab.Text = "Doanh thu";
             this.DoanhThuTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.DoanhThuTab.UseVisualStyleBackColor = false;
+            this.DoanhThuTab.Click += new System.EventHandler(this.DoanhThuTab_Click);
             // 
             // NhanVienTab
             // 
@@ -125,6 +129,7 @@
             this.KhoHangTab.Text = "Kho hàng";
             this.KhoHangTab.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.KhoHangTab.UseVisualStyleBackColor = false;
+            this.KhoHangTab.Click += new System.EventHandler(this.KhoHangTab_Click);
             // 
             // panel1
             // 
@@ -147,6 +152,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(250, 100);
             this.panel2.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(421, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Thêm nv";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // NhanVien
             // 
@@ -174,5 +189,6 @@
         private System.Windows.Forms.Button KhoHangTab;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }

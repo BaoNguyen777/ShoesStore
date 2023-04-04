@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Appbangiay
 {
@@ -37,7 +38,10 @@ namespace Appbangiay
                 {
                     dr.Close();
                     MessageBox.Show("Login successful ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //Nua thay doan nay thanh mo trang chu nhe Chi Bao :3
+                    Home fr = new Home();
+                    this.Hide();
+                    fr.ShowDialog();
+                    this.Close();
                 }
                 else
                 {

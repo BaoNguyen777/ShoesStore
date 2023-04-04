@@ -16,5 +16,34 @@ namespace Appbangiay
         {
             InitializeComponent();
         }
+
+        private void DonHangTab_Click(object sender, EventArgs e)
+        {
+            Home fr = new Home();
+            this.Hide();
+            fr.ShowDialog();
+            this.Close();
+        }
+
+        private void KhoHangTab_Click(object sender, EventArgs e)
+        {
+            KhoHang fr = new KhoHang();
+            this.Hide();
+            fr.ShowDialog();
+            this.Close();
+        }
+
+        private void DoanhThuTab_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemNhanVien fr = new ThemNhanVien();
+            this.Hide();
+            fr.ShowDialog();
+            this.Close();
+        }
     }
 }
