@@ -51,3 +51,18 @@ C:\Users\Bao Nguyen\Source\Repos\ShoesStore2\Appbangiay\obj\Release\Appbangiay.c
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore2\Appbangiay\obj\Release\Appbangiay.csproj.CoreCompileInputs.cache
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore2\Appbangiay\obj\Release\Appbangiay.exe
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore2\Appbangiay\obj\Release\Appbangiay.pdb
+D:\HK2-year4\.Net\Appbangiay\bin\Release\Appbangiay.exe.config
+D:\HK2-year4\.Net\Appbangiay\bin\Release\Appbangiay.exe
+D:\HK2-year4\.Net\Appbangiay\bin\Release\Appbangiay.pdb
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.AssemblyReference.cache
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.SuggestedBindingRedirects.cache
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.Home.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.KhoHang.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.Login.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.NhanVien.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.Properties.Resources.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.ThemNhanVien.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.GenerateResource.cache
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.CoreCompileInputs.cache
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.exe
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.pdb

@@ -110,6 +110,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="QLGiayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ThemNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +156,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLGiayDataSet.xsc">
+      <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLGiayDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLGiayDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLGiayDataSet.xss">
+      <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\a.png" />
   </ItemGroup>
   <ItemGroup>
