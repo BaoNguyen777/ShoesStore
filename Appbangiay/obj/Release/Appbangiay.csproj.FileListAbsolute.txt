@@ -66,3 +66,7 @@ D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.GenerateResource.cach
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.csproj.CoreCompileInputs.cache
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.exe
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.pdb
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.DoanhThu.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
+D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources
