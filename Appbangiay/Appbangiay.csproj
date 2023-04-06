@@ -97,6 +97,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationButtons.cs" />
     <Compile Include="NavigationControl.cs" />
     <Compile Include="NhanVien.cs">
       <SubType>Form</SubType>
