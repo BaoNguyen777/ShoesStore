@@ -70,3 +70,11 @@ D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.DoanhThu.resour
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.KhoHang.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.Login.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.NhanVien.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.ThemNhanVien.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.UserControls.DoanhThu.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources

@@ -76,6 +76,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDatabase.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-user-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uploadButton1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
