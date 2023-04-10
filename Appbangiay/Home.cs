@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Appbangiay.Object;
 
 namespace Appbangiay
 {
@@ -15,7 +16,6 @@ namespace Appbangiay
     {
         NavigationControl navigationControl;
         NavigationButtons navigationButtons;
-
         Color btnDefailtColor = Color.FromKnownColor(KnownColor.Navy);
         Color btnSelectColor = Color.FromKnownColor(KnownColor.OrangeRed);
         public Home()
@@ -24,10 +24,15 @@ namespace Appbangiay
             InitializeNavigationControl();
             InitializeNavigationButton();
         }
+        public string NhanVienText
+        {
+            get { return btnNhanVien.Text; }
+            set { btnNhanVien.Text = value; }
+        }
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
-            {  new SanPham(), new HoaDon(), new DoanhThu(), new NguoiDung()};
+            {  new SanPham(), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung()};
 
             navigationControl = new NavigationControl(userControls, panel1);
             navigationControl.Display(0);
