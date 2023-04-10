@@ -83,12 +83,6 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="KhoHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="KhoHang.Designer.cs">
-      <DependentUpon>KhoHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="linear_color.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -100,12 +94,6 @@
     </Compile>
     <Compile Include="NavigationButtons.cs" />
     <Compile Include="NavigationControl.cs" />
-    <Compile Include="NhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVien.Designer.cs">
-      <DependentUpon>NhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="Object.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,12 +106,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ThemNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThemNhanVien.Designer.cs">
-      <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DoanhThu.cs">
       <SubType>UserControl</SubType>
@@ -152,22 +134,13 @@
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KhoHang.resx">
-      <DependentUpon>KhoHang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien.resx">
-      <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThemNhanVien.resx">
-      <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>

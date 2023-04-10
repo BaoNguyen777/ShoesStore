@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.TbaoTxt = new System.Windows.Forms.TextBox();
+            this.KichCoTxt = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.SoLuongTxt = new System.Windows.Forms.NumericUpDown();
             this.ThuongHieuTxt = new System.Windows.Forms.ComboBox();
@@ -64,9 +67,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.KichCoTxt = new System.Windows.Forms.ComboBox();
-            this.TbaoTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -116,6 +116,44 @@
             this.splitContainer1.Size = new System.Drawing.Size(1000, 600);
             this.splitContainer1.SplitterDistance = 300;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // TbaoTxt
+            // 
+            this.TbaoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbaoTxt.Location = new System.Drawing.Point(14, 361);
+            this.TbaoTxt.Multiline = true;
+            this.TbaoTxt.Name = "TbaoTxt";
+            this.TbaoTxt.Size = new System.Drawing.Size(269, 133);
+            this.TbaoTxt.TabIndex = 42;
+            // 
+            // KichCoTxt
+            // 
+            this.KichCoTxt.FormattingEnabled = true;
+            this.KichCoTxt.Items.AddRange(new object[] {
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43"});
+            this.KichCoTxt.Location = new System.Drawing.Point(148, 116);
+            this.KichCoTxt.Name = "KichCoTxt";
+            this.KichCoTxt.Size = new System.Drawing.Size(64, 21);
+            this.KichCoTxt.TabIndex = 41;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(52, 116);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(60, 20);
+            this.label15.TabIndex = 40;
+            this.label15.Text = "Kích cỡ";
             // 
             // label7
             // 
@@ -488,44 +526,6 @@
             this.label8.Size = new System.Drawing.Size(308, 33);
             this.label8.TabIndex = 40;
             this.label8.Text = "Danh sách sản phẩm";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(52, 116);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(60, 20);
-            this.label15.TabIndex = 40;
-            this.label15.Text = "Kích cỡ";
-            // 
-            // KichCoTxt
-            // 
-            this.KichCoTxt.FormattingEnabled = true;
-            this.KichCoTxt.Items.AddRange(new object[] {
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43"});
-            this.KichCoTxt.Location = new System.Drawing.Point(148, 116);
-            this.KichCoTxt.Name = "KichCoTxt";
-            this.KichCoTxt.Size = new System.Drawing.Size(64, 21);
-            this.KichCoTxt.TabIndex = 41;
-            // 
-            // TbaoTxt
-            // 
-            this.TbaoTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbaoTxt.Location = new System.Drawing.Point(14, 361);
-            this.TbaoTxt.Multiline = true;
-            this.TbaoTxt.Name = "TbaoTxt";
-            this.TbaoTxt.Size = new System.Drawing.Size(267, 104);
-            this.TbaoTxt.TabIndex = 42;
             // 
             // SanPham
             // 

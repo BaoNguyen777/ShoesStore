@@ -63,7 +63,7 @@ namespace Appbangiay.UserControls
                             cmd.CommandType = CommandType.StoredProcedure;
                             Home hm = new Home();
                             cmd.Parameters.AddWithValue("@masp",MaSanPhamTxt.Text);
-                            cmd.Parameters.AddWithValue("@nvsdt",hm.btnNhanVien.Text);
+                            cmd.Parameters.AddWithValue("@nvsdt",sdt);
                             cmd.Parameters.AddWithValue("@kichco",KichCoTxt.Text);
                             cmd.Parameters.AddWithValue("@soluongnhap",SoLuongTxt.Text);
                             cmd.Parameters.AddWithValue("@hieusp",ThuongHieuTxt.Text);
