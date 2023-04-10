@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Appbangiay;
 using static Appbangiay.Object;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Appbangiay.UserControls;
 
 namespace Appbangiay
 {
@@ -32,7 +33,7 @@ namespace Appbangiay
         {
             if (txtAdmin.Text != string.Empty || txtAdminPass.Text != string.Empty)
             {
-                SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-Q056MBAS\SQLEXPRESS;Initial Catalog=QLShopGiay;Integrated Security=True");
+                SqlConnection conn = new SqlConnection("Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true");
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("select * from NHANVIEN where nvsdt ='" + txtAdmin.Text + "' and nvMatKhau='" + txtAdminPass.Text + "';", conn);
                 dr = cmd.ExecuteReader();
@@ -51,6 +52,8 @@ namespace Appbangiay
                     //person.Luong = dr.GetInt32(4).ToString();
                     dr.Close();
                     Home fr = new Home();
+                    SanPham sp = new SanPham();
+                    sp.Sanphamtext = person.SDT;
                     fr.NhanVienText = person.Ten;
                     this.Hide();
                     fr.ShowDialog();

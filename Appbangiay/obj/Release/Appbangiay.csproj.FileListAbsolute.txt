@@ -97,3 +97,7 @@ D:\HK2-year4\.net10-4\Appbangiay\obj\Release\Appbangiay.csproj.GenerateResource.
 D:\HK2-year4\.net10-4\Appbangiay\obj\Release\Appbangiay.csproj.CoreCompileInputs.cache
 D:\HK2-year4\.net10-4\Appbangiay\obj\Release\Appbangiay.exe
 D:\HK2-year4\.net10-4\Appbangiay\obj\Release\Appbangiay.pdb
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.DoanhThu.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources
