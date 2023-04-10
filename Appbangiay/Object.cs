@@ -14,7 +14,7 @@ namespace Appbangiay
             public string Matkhau { get; set; }
             public string Ten { get; set; }
             public string Chucvu { get; set; }
-            //public string Luong { get; set; }
+            //public int Luong { get; set; }
         }
     }
 }

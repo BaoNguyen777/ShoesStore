@@ -5,9 +5,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 using static Appbangiay.Object;
 
 namespace Appbangiay
@@ -18,6 +20,7 @@ namespace Appbangiay
         NavigationButtons navigationButtons;
         Color btnDefailtColor = Color.FromKnownColor(KnownColor.Navy);
         Color btnSelectColor = Color.FromKnownColor(KnownColor.OrangeRed);
+        public string a;
         public Home()
         {
             InitializeComponent();
@@ -29,13 +32,29 @@ namespace Appbangiay
             get { return btnNhanVien.Text; }
             set { btnNhanVien.Text = value; }
         }
+
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
-            {  new SanPham(), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung()};
+            {  new SanPham(), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung(), new admin()};
 
             navigationControl = new NavigationControl(userControls, panel1);
             navigationControl.Display(0);
+        }
+        public string NhanVienChucvu
+        {
+            get
+            {
+                if (a[0] == '0')
+                {
+                    return "0";
+                }
+                else
+                {
+                    return "1";
+                }
+            }
+            set { a = value; }
         }
 
         private void InitializeNavigationButton()
@@ -82,8 +101,14 @@ namespace Appbangiay
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
-            navigationControl.Display(3);
-            navigationButtons.Highlight(btnNhanVien);
+            if (a[0] == '0') // admin
+            {
+                navigationControl.Display(4);
+            }
+            else 
+            {
+                navigationControl.Display(3);
+            }
         }
 
         private void btnLogo_Click(object sender, EventArgs e)

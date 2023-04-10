@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsDatabase.cs" />
+    <Compile Include="Doimatkhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doimatkhau.Designer.cs">
+      <DependentUpon>Doimatkhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLShopGiayDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLShopGiayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Suathongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Suathongtin.Designer.cs">
+      <DependentUpon>Suathongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\admin.Designer.cs">
+      <DependentUpon>admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\DoanhThu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +154,9 @@
     <Compile Include="UserControls\SanPham.Designer.cs">
       <DependentUpon>SanPham.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Doimatkhau.resx">
+      <DependentUpon>Doimatkhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +167,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Suathongtin.resx">
+      <DependentUpon>Suathongtin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\admin.resx">
+      <DependentUpon>admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>
@@ -179,6 +211,17 @@
     </None>
     <None Include="QLGiayDataSet.xss">
       <DependentUpon>QLGiayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLShopGiayDataSet.xsc">
+      <DependentUpon>QLShopGiayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLShopGiayDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLShopGiayDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLShopGiayDataSet.xss">
+      <DependentUpon>QLShopGiayDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\a.png" />
   </ItemGroup>

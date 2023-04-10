@@ -98,3 +98,22 @@ C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.U
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
 C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources
+D:\HK2-year4\net\Appbangiay\bin\Release\Appbangiay.exe.config
+D:\HK2-year4\net\Appbangiay\bin\Release\Appbangiay.exe
+D:\HK2-year4\net\Appbangiay\bin\Release\Appbangiay.pdb
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.csproj.AssemblyReference.cache
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.csproj.SuggestedBindingRedirects.cache
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Home.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Login.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Properties.Resources.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.UserControls.DoanhThu.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.UserControls.HoaDon.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.UserControls.NguoiDung.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.UserControls.SanPham.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.csproj.GenerateResource.cache
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.csproj.CoreCompileInputs.cache
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.exe
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.pdb
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.UserControls.admin.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Doimatkhau.resources
+D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Suathongtin.resources

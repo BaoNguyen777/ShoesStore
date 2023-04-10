@@ -33,5 +33,16 @@ namespace Appbangiay.Properties {
                 return ((string)(this["QLGiayConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-Q056MBAS\\SQLEXPRESS;Initial Catalog=QLShopGiay;Integrated Secu" +
+            "rity=True")]
+        public string QLShopGiayConnectionString {
+            get {
+                return ((string)(this["QLShopGiayConnectionString"]));
+            }
+        }
     }
 }

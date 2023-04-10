@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.txtChucvu = new System.Windows.Forms.Label();
+            this.txtSDT = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -50,9 +50,9 @@
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.txtChucvu);
+            this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.txtName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -63,30 +63,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1150, 690);
             this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkBlue;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 461);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1150, 229);
-            this.panel2.TabIndex = 9;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DarkBlue;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Image = global::Appbangiay.Properties.Resources.icons8_user_501;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1150, 229);
-            this.button3.TabIndex = 0;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -100,6 +76,7 @@
             this.button4.TabIndex = 20;
             this.button4.Text = "Đăng xuất";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -111,6 +88,7 @@
             this.button2.TabIndex = 19;
             this.button2.Text = "Sửa thông tin";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -122,36 +100,37 @@
             this.button1.TabIndex = 18;
             this.button1.Text = "Đổi mật khẩu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label7
+            // txtChucvu
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(469, 296);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 19);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "cvdatabase";
+            this.txtChucvu.AutoSize = true;
+            this.txtChucvu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucvu.Location = new System.Drawing.Point(469, 296);
+            this.txtChucvu.Name = "txtChucvu";
+            this.txtChucvu.Size = new System.Drawing.Size(73, 19);
+            this.txtChucvu.TabIndex = 17;
+            this.txtChucvu.Text = "Nhân Viên";
             // 
-            // label6
+            // txtSDT
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(469, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 19);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "sdtdatabase";
+            this.txtSDT.AutoSize = true;
+            this.txtSDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(469, 219);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(81, 19);
+            this.txtSDT.TabIndex = 16;
+            this.txtSDT.Text = "sdtdatabase";
             // 
-            // label5
+            // txtName
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(469, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "tnvdatabase";
+            this.txtName.AutoSize = true;
+            this.txtName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(469, 144);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(81, 19);
+            this.txtName.TabIndex = 15;
+            this.txtName.Text = "tnvdatabase";
             // 
             // label4
             // 
@@ -193,6 +172,30 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Thông Tin Nhân Viên";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkBlue;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 461);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1150, 229);
+            this.panel2.TabIndex = 9;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkBlue;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Image = global::Appbangiay.Properties.Resources.icons8_user_501;
+            this.button3.Location = new System.Drawing.Point(0, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(1150, 229);
+            this.button3.TabIndex = 0;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // NguoiDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,9 +217,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label txtChucvu;
+        private System.Windows.Forms.Label txtSDT;
+        private System.Windows.Forms.Label txtName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

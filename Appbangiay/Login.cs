@@ -23,7 +23,12 @@ namespace Appbangiay
         {
             InitializeComponent();
         }
-
+        public void RestartForm()
+        {
+            txtAdmin.Text = "";
+            txtAdminPass.Text = "";
+            this.Show();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -33,7 +38,7 @@ namespace Appbangiay
         {
             if (txtAdmin.Text != string.Empty || txtAdminPass.Text != string.Empty)
             {
-                SqlConnection conn = new SqlConnection("Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true");
+                SqlConnection conn = new SqlConnection("Server=LAPTOP-Q056MBAS\\SQLEXPRESS;Database=QLShopGiay;integrated security=true");
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("select * from NHANVIEN where nvsdt ='" + txtAdmin.Text + "' and nvMatKhau='" + txtAdminPass.Text + "';", conn);
                 dr = cmd.ExecuteReader();
@@ -41,20 +46,17 @@ namespace Appbangiay
                 {
                     Nhanvien person = new Nhanvien();
                     person.SDT = dr.GetString(0);
-                    if (!dr.IsDBNull(2))
-                    {
-                        person.Ten = dr.GetString(2);
-                    }
-                    else
-                    {
-                        person.Ten = "Chu cua hang";
-                    }
-                    //person.Luong = dr.GetInt32(4).ToString();
+                    person.Ten = dr.GetString(2);
+                    person.Chucvu = dr.GetString(3);
                     dr.Close();
+
                     Home fr = new Home();
-                    SanPham sp = new SanPham();
-                    sp.Sanphamtext = person.SDT;
+
+                    // set the values of the properties in the Home form
                     fr.NhanVienText = person.Ten;
+                    fr.NhanVienChucvu = person.Chucvu;
+
+                    // show the Home form as a modal dialog
                     this.Hide();
                     fr.ShowDialog();
                     this.Close();
@@ -62,13 +64,13 @@ namespace Appbangiay
                 else
                 {
                     dr.Close();
-                    MessageBox.Show("No Account avilable with this username and password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tai khoang khong hop le", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
-                MessageBox.Show("Please enter value in all field.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhap day du thong tin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
