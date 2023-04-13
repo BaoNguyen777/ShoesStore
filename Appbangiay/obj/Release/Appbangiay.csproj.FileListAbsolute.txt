@@ -117,3 +117,6 @@ D:\HK2-year4\net\Appbangiay\obj\Release\Appbangiay.Suathongtin.resources
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.Doimatkhau.resources
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.Suathongtin.resources
 D:\HK2-year4\.Net\Appbangiay\obj\Release\Appbangiay.UserControls.admin.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.Doimatkhau.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.Suathongtin.resources
+C:\Users\Bao Nguyen\Source\Repos\ShoesStore1\Appbangiay\obj\Release\Appbangiay.UserControls.admin.resources

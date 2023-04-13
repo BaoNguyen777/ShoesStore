@@ -71,5 +71,6 @@ namespace Appbangiay
                 MessageBox.Show("Nhap day du thong tin", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
     }
 }

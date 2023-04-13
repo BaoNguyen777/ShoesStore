@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,16 +15,13 @@ namespace Appbangiay.UserControls
 {
     public partial class SanPham : UserControl
     {
+        
         public SanPham()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
-        private string sdt;
-        public string Sanphamtext
-        {
-            get { return sdt; }
-            set { sdt = value; }
-        }
+        
+        
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -62,12 +60,12 @@ namespace Appbangiay.UserControls
                         {
                             cmd.CommandType = CommandType.StoredProcedure;
                             Home hm = new Home();
-                            cmd.Parameters.AddWithValue("@masp",MaSanPhamTxt.Text);
-                            cmd.Parameters.AddWithValue("@nvsdt",sdt);
-                            cmd.Parameters.AddWithValue("@kichco",KichCoTxt.Text);
-                            cmd.Parameters.AddWithValue("@soluongnhap",SoLuongTxt.Text);
-                            cmd.Parameters.AddWithValue("@hieusp",ThuongHieuTxt.Text);
-                            cmd.Parameters.AddWithValue("@dongia",DonGiaTxt.Text);
+                            cmd.Parameters.AddWithValue("@masp", MaSanPhamTxt.Text);
+                            cmd.Parameters.AddWithValue("@nvten", get_sdt);
+                            cmd.Parameters.AddWithValue("@kichco", KichCoTxt.Text);
+                            cmd.Parameters.AddWithValue("@soluongnhap", SoLuongTxt.Text);
+                            cmd.Parameters.AddWithValue("@hieusp", ThuongHieuTxt.Text);
+                            cmd.Parameters.AddWithValue("@dongia", DonGiaTxt.Text);
                             cmd.Parameters.AddWithValue("@mausp", DonGiaTxt.Text);
 
                             cmd.ExecuteNonQuery();

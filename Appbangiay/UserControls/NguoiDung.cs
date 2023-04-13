@@ -18,6 +18,12 @@ namespace Appbangiay.UserControls
         {
             InitializeComponent();
         }
+        public string get_sdt
+        {
+            get { return txtSDT.Text; }
+            set { txtSDT.Text = value; }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
 

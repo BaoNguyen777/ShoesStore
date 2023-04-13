@@ -32,6 +32,7 @@ namespace Appbangiay
             get { return btnNhanVien.Text; }
             set { btnNhanVien.Text = value; }
         }
+        
 
         private void InitializeNavigationControl()
         {
