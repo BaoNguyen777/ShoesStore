@@ -53,44 +53,41 @@ namespace Appbangiay.UserControls
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            //string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
+           /* using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
+                conn.Close();*/
 
-            }
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+           // string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
+            /*using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
+                conn.Close();*/
 
-            }
+           // }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            //string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
+            /*using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
+                conn.Close();*/
 
-            }
+           // }
         }
     }
 }

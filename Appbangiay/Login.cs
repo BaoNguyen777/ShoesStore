@@ -12,6 +12,8 @@ using Appbangiay;
 using static Appbangiay.Object;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using Appbangiay.UserControls;
+using System.Collections;
+using System.Windows.Markup;
 
 namespace Appbangiay
 {
@@ -38,35 +40,31 @@ namespace Appbangiay
         {
             if (txtAdmin.Text != string.Empty || txtAdminPass.Text != string.Empty)
             {
-                SqlConnection conn = new SqlConnection("Server=LAPTOP-Q056MBAS\\SQLEXPRESS;Database=QLShopGiay;integrated security=true");
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("select * from NHANVIEN where nvsdt ='" + txtAdmin.Text + "' and nvMatKhau='" + txtAdminPass.Text + "';", conn);
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
                 {
-                    Nhanvien person = new Nhanvien();
-                    person.SDT = dr.GetString(0);
-                    person.Ten = dr.GetString(2);
-                    person.Chucvu = dr.GetString(3);
-                    dr.Close();
-
-                    Home fr = new Home();
-
-                    // set the values of the properties in the Home form
-                    fr.NhanVienText = person.Ten;
-                    fr.NhanVienChucvu = person.Chucvu;
-
-                    // show the Home form as a modal dialog
-                    this.Hide();
-                    fr.ShowDialog();
-                    this.Close();
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("select * from NHANVIEN where nvsdt ='" + txtAdmin.Text + "' and nvMatKhau='" + txtAdminPass.Text + "';", conn);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Nhanvien person = new Nhanvien();
+                        person.SDT = dr.GetString(0);
+                        person.Ten = dr.GetString(2);
+                        person.Chucvu = dr.GetString(3);
+                        dr.Close();
+                        Home fr = new Home();
+                        fr.NhanVienText = person.Ten;
+                        fr.NhanVienChucvu = person.Chucvu;
+                        this.Hide();
+                        fr.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        dr.Close();
+                        MessageBox.Show("Tai khoang khong hop le", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    dr.Close();
-                    MessageBox.Show("Tai khoang khong hop le", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
             }
             else
             {
