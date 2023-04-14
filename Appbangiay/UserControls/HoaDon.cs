@@ -16,11 +16,10 @@ namespace Appbangiay.UserControls
         public HoaDon()
         {
             InitializeComponent();
-            dtdxl.DataSource = getHoaDondaxuly().Tables[0];
-            //dataNV.DataMember = "nhanvien";
-            dtdxl.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtChuaxuly.DataSource = getAllHoaDon().Tables[0];
-            dtChuaxuly.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            hddaxuly.DataSource = getHoaDondaxuly().Tables[0];
+            dtcxl.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtcxl.DataSource = getAllHoaDon().Tables[0];
+            dtcxl.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         DataSet getAllHoaDon()
         {
@@ -53,28 +52,27 @@ namespace Appbangiay.UserControls
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            //string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-           /* using (SqlConnection conn = new SqlConnection(connectionString.con))
+            string query = "UPDATE HOADON SET tinhtrang = 'da xu ly' WHERE hdID = 'your_hdid_value_here';";
+           using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
-                conn.Close();*/
-
-            //}
+                conn.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           // string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-            /*using (SqlConnection conn = new SqlConnection(connectionString.con))
+           string query = "DELETE FROM HOADON WHERE hdID = 'hdid';";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
-                conn.Close();*/
+                conn.Close();
 
-           // }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

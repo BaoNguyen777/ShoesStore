@@ -97,5 +97,47 @@ namespace Appbangiay.UserControls
 
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong + "+ textBox2.Text+ " WHERE nvSdt = '"+ textBox1.Text+"'; ";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteReader();
+                dataNV.DataSource = getAllNhanvien().Tables[0];
+                conn.Close();
+
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong - "+ textBox2.Text+" WHERE nvSdt = '" + textBox1.Text + "';";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteReader();
+                dataNV.DataSource = getAllNhanvien().Tables[0];
+                conn.Close();
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE NHANVIEN SET nvMatKhau = '"+ txtMatKhau.Text+ "', nvTen = '"+txtTen.Text+"', nvChucVu = '"+txtChucvu.Text+"', nvLuong = '"+txtLuong+"' WHERE nvSdt = '" + txtSDT.Text +"';";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteReader();
+                dataNV.DataSource = getAllNhanvien().Tables[0];
+                conn.Close();
+
+            }
+        }
     }
 }

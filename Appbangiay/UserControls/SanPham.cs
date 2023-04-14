@@ -42,7 +42,7 @@ namespace Appbangiay.UserControls
 
         private void ThemBtn_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true";
+           /* string connectionString = "Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true";
 
             // Tạo đối tượng SqlConnection
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -79,7 +79,7 @@ namespace Appbangiay.UserControls
                 {
                     TbaoTxt.Text = "Lỗi: " + ex.Message;
                 }
-            }
+            }*/
         }
     }
 }
