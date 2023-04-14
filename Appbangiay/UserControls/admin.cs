@@ -36,14 +36,6 @@ namespace Appbangiay.UserControls
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow dr = this.dataNV.Rows[e.RowIndex];
-                txtSDT.Text = dr.Cells["Số điện thoại nhân viên"].Value.ToString();
-                txtTen.Text = dr.Cells["Tên Nhân viên"].Value.ToString();
-                txtChucvu.Text = dr.Cells["Chức vụ"].Value.ToString();
-                txtLuong.Text = dr.Cells["Lương"].Value.ToString();
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +56,7 @@ namespace Appbangiay.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "Insert into nhanvien (nvsdt, nvmatkhau, nvten, nvchucvu, nvluong) values ('"+txtSDT.Text+"','"+txtMatKhau.Text+"','"+txtTen.Text+"','"+txtChucvu.Text+"',"+txtLuong.Text+");";
+            string query = "Insert into nhanvien (nvsdt, nvmatkhau, nvten, nvchucvu, nvluong) values ('" + txtSDT.Text + "','" + txtMatKhau.Text + "','" + txtTen.Text + "','" + txtChucvu.Text + "'," + txtLuong.Text + ");";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
@@ -86,7 +78,7 @@ namespace Appbangiay.UserControls
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM nhanvien WHERE nvsdt = '"+txtSDT.Text+"';";
+            string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
@@ -100,7 +92,7 @@ namespace Appbangiay.UserControls
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong + "+ textBox2.Text+ " WHERE nvSdt = '"+ textBox1.Text+"'; ";
+            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong + " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "'; ";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
@@ -114,7 +106,7 @@ namespace Appbangiay.UserControls
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong - "+ textBox2.Text+" WHERE nvSdt = '" + textBox1.Text + "';";
+            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong - " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "';";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
@@ -128,7 +120,7 @@ namespace Appbangiay.UserControls
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET nvMatKhau = '"+ txtMatKhau.Text+ "', nvTen = '"+txtTen.Text+"', nvChucVu = '"+txtChucvu.Text+"', nvLuong = '"+txtLuong+"' WHERE nvSdt = '" + txtSDT.Text +"';";
+            string query = "UPDATE NHANVIEN SET  nvTen = '" + txtTen.Text + "', nvChucVu = '" + txtChucvu.Text + "', nvLuong = '" + txtLuong.Text + "' WHERE nvSdt = '" + txtSDT.Text + "';";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
@@ -138,6 +130,23 @@ namespace Appbangiay.UserControls
                 conn.Close();
 
             }
+        }
+
+        private void dataNV_SelectionChanged(object sender, EventArgs e)
+        {
+            clsDatabase.OpenConnection();
+            using (SqlCommand cmd = new SqlCommand("SELECT nvsdt, nvten, nvchucvu, nvluong from nhanvien where nvSdt= '" + dataNV.CurrentRow.Cells[0].Value + "'", clsDatabase.con))
+            {
+                //cmd.Parameters.AddWithValue("@mahh", dataSP.CurrentRow.Cells[0].Value);
+                string sdt = (string)cmd.ExecuteScalar();
+                txtSDT.Text = sdt;
+                textBox1.Text = sdt;
+                textBox3.Text = sdt;
+                txtTen.Text = dataNV.CurrentRow.Cells[1].Value.ToString();
+                txtChucvu.Text = dataNV.CurrentRow.Cells[2].Value.ToString();
+                txtLuong.Text = dataNV.CurrentRow.Cells[3].Value.ToString();
+            }
+            clsDatabase.CloseConnection();
         }
     }
 }

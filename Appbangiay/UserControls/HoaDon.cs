@@ -20,7 +20,9 @@ namespace Appbangiay.UserControls
             dtcxl.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dtcxl.DataSource = getAllHoaDon().Tables[0];
             dtcxl.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.DataSource = DataGridViewSelectionMode.FullRowSelect;
         }
+
         DataSet getAllHoaDon()
         {
             string query = "SELECT * from hoadon where tinhtrang ='Chua xu ly';";
@@ -31,6 +33,7 @@ namespace Appbangiay.UserControls
 
                 SqlDataAdapter adpter = new SqlDataAdapter(query, conn);
                 adpter.Fill(data);
+
                 conn.Close();
             }
             return data;
@@ -45,31 +48,49 @@ namespace Appbangiay.UserControls
 
                 SqlDataAdapter adpter = new SqlDataAdapter(query, conn);
                 adpter.Fill(data);
+
                 conn.Close();
             }
             return data;
         }
+        DataSet getchitiet(string x)
+        {
+            string query = "SELECT * from ChiTietHoaDon where hdID ='" + x + "';";
+            DataSet data = new DataSet();
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            {
+                conn.Open();
 
+                SqlDataAdapter adpter = new SqlDataAdapter(query, conn);
+                adpter.Fill(data);
+                conn.Close();
+            }
+            return data;
+        }
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE HOADON SET tinhtrang = 'da xu ly' WHERE hdID = 'your_hdid_value_here';";
-           using (SqlConnection conn = new SqlConnection(connectionString.con))
+            string query = "UPDATE HOADON SET tinhtrang = 'da xu ly' WHERE hdID = '" + dtcxl.CurrentRow.Cells[0].Value + "';";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
+                hddaxuly.DataSource = getHoaDondaxuly().Tables[0];
+                dtcxl.DataSource = getAllHoaDon().Tables[0];
                 conn.Close();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           string query = "DELETE FROM HOADON WHERE hdID = 'hdid';";
+            string query = "EXEC DeleteHoaDon '" + dtcxl.CurrentRow.Cells[0].Value + "';";
             using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteReader();
+                hddaxuly.DataSource = getHoaDondaxuly().Tables[0];
+                dtcxl.DataSource = getAllHoaDon().Tables[0];
                 conn.Close();
 
             }
@@ -85,7 +106,34 @@ namespace Appbangiay.UserControls
                 cmd.ExecuteReader();
                 conn.Close();*/
 
-           // }
+            // }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string query = "UPDATE HOADON SET tinhtrang = 'chua xu ly' WHERE hdID = '" + hddaxuly.CurrentRow.Cells[0].Value + "';";
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteReader();
+                hddaxuly.DataSource = getHoaDondaxuly().Tables[0];
+                dtcxl.DataSource = getAllHoaDon().Tables[0];
+                conn.Close();
+            }
+        }
+
+        private void dtcxl_SelectionChanged(object sender, EventArgs e)
+        {
+            string x = dtcxl.CurrentRow.Cells[0].Value.ToString();
+            dataGridView1.DataSource = getchitiet(x).Tables[0];
+
+        }
+
+        private void hddaxuly_SelectionChanged(object sender, EventArgs e)
+        {
+            string x = hddaxuly.CurrentRow.Cells[0].Value.ToString();
+            dataGridView1.DataSource = getchitiet(x).Tables[0];
         }
     }
 }
