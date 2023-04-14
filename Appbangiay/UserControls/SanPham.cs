@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO.Pipes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Appbangiay.UserControls
@@ -77,24 +69,95 @@ namespace Appbangiay.UserControls
 
         private void dataSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
         }
 
         private void dataSP_SelectionChanged(object sender, EventArgs e)
         {
-            /*clsDatabase.OpenConnection();
-            using (SqlCommand cmd = new SqlCommand("Select hhID from HANGHOA INNER JOIN TONKHO ON HANGHOA.hhID = TONKHO.hhID where HANGHOA.hhID= '" + dataSP.CurrentRow.Cells[0].Value + "'  ", clsDatabase.con))
+            using (SqlConnection conn = new SqlConnection(connectionString.con))
             {
-                string mahh = (string)cmd.ExecuteScalar();
-                textBox1.Text = mahh;
-                textBox2.Text = dataSP.CurrentRow.Cells[1].Value.ToString();
-                SqlCommand cmd1 = new SqlCommand("SELECT hhDonGia FROM HANGHOA INNER JOIN TONKHO ON HANGHOA.hhID = TONKHO.hhID where HANGHOA.hhID= '" + dataSP.CurrentRow.Cells[0].Value + "'", clsDatabase.con);
-                string hhdongia = cmd1.ExecuteScalar().ToString();
-                textBox3.Text = hhdongia;
-                SqlCommand cmd2 = new SqlCommand("SELECT hhMauSac FROM HANGHOA INNER JOIN TONKHO ON HANGHOA.hhID = TONKHO.hhID where HANGHOA.hhID= '" + dataSP.CurrentRow.Cells[0].Value + "'", clsDatabase.con);
-                string hhmausac = cmd2.ExecuteScalar().ToString();
-                textBox4.Text = hhmausac;
+                /*conn.Open();
+                using (SqlCommand cmd = new SqlCommand("showttsp", conn))
+                {
+                    cmd.Parameters.AddWithValue("@hhid", dataSP.CurrentRow.Cells[1].Value);
+                    cmd.Parameters.AddWithValue("@kcso", dataSP.CurrentRow.Cells[2].Value);
+                    string mahh = cmd.ExecuteScalar().ToString();
+                    textBox1.Text = mahh;
+
+                    string hieu = cmd.ExecuteScalar().ToString();
+                    textBox2.Text = hieu;
+
+                    string gia = cmd.ExecuteScalar().ToString();
+                    textBox3.Text = gia;
+
+                    string mau = cmd.ExecuteScalar().ToString();
+                    textBox4.Text = mau;
+                }*/
+
+                clsDatabase.OpenConnection();
+
+                /*
+                                SqlCommand cmd1 = new SqlCommand("Select hhID from HANGHOA INNER JOIN TONKHO ON HANGHOA.hhID = TONKHO.hhID " +
+                                "where HANGHOA.hhID= '" + dataSP.CurrentRow.Cells[1].Value + "' " +
+                                "and TONKHO.kcSo= '" + dataSP.CurrentRow.Cells[2].Value + "' ", clsDatabase.con);
+                                string mahh = cmd1.ExecuteScalar().ToString();
+                                textBox1.Text = mahh;*/
+                string query = "SELECT HANGHOA.hhID, HANGHOA.hhHieu, HANGHOA.hhDonGia, HANGHOA.hhMauSac FROM HANGHOA INNER JOIN TONKHO ON HANGHOA.hhID = TONKHO.hhID WHERE HANGHOA.hhID = @hhID AND TONKHO.kcSo = @kcSo";
+                SqlCommand cmd = new SqlCommand(query, clsDatabase.con);
+                cmd.Parameters.AddWithValue("@hhID", dataSP.CurrentRow.Cells[1].Value);
+                cmd.Parameters.AddWithValue("@kcSo", dataSP.CurrentRow.Cells[2].Value);
+
+                try
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            textBox1.Text = reader["hhID"].ToString();
+                            textBox2.Text = reader["hhHieu"].ToString();
+                            textBox3.Text = reader["hhDonGia"].ToString();
+                            textBox4.Text = reader["hhMauSac"].ToString();
+                        }
+                        else
+                        {
+                            // Handle case where no rows are returned
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    textBox1.Text = "Lỗi:" + ex.Message;
+
+                }
+
+
+
+                clsDatabase.CloseConnection();
             }
-            clsDatabase.CloseConnection();*/
         }
+
+        private void UpdSPbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DelSPbtn_Click(object sender, EventArgs e)
+        {
+            string str1 = "DELETE FROM hanghoa WHERE hhID=@hhID";
+            string str2 = "DELETE FROM tonkho WHERE hhID=@hhID";
+            string str3 = "DELETE FROM lichsunhaphang WHERE hhID=@hhID";
+            clsDatabase.OpenConnection();
+            SqlCommand cmd = new SqlCommand(str1, clsDatabase.con);
+            cmd.Parameters.AddWithValue("@hhID", textBox1.Text);
+            cmd.ExecuteNonQuery();
+            SqlCommand cmd1 = new SqlCommand(str2, clsDatabase.con);
+            cmd1.Parameters.AddWithValue("@hhID", textBox1.Text);
+            cmd1.ExecuteNonQuery();
+            SqlCommand cmd2 = new SqlCommand(str3, clsDatabase.con);
+            cmd2.Parameters.AddWithValue("@hhID", textBox1.Text);
+            cmd2.ExecuteNonQuery();
+            clsDatabase.CloseConnection();
+        }
+
     }
 }

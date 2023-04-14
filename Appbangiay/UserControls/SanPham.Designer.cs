@@ -361,6 +361,7 @@
             this.button2.TabIndex = 12;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.DelSPbtn_Click);
             // 
             // button1
             // 
@@ -371,6 +372,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Cập nhật";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.UpdSPbtn_Click);
             // 
             // pictureBox1
             // 
