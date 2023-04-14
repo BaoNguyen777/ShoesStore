@@ -20,7 +20,7 @@ namespace Appbangiay
     public partial class Login : Form
     {
         private SqlDataReader dr;
-
+        public static clsNhanvien nvien;
         public Login()
         {
             InitializeComponent();
@@ -38,6 +38,7 @@ namespace Appbangiay
 
         protected void button1_Click(object sender, EventArgs e)
         {
+            nvien = null;
             if (txtAdmin.Text != string.Empty || txtAdminPass.Text != string.Empty)
             {
                 using (SqlConnection conn = new SqlConnection(connectionString.con))
@@ -55,6 +56,9 @@ namespace Appbangiay
                         Home fr = new Home();
                         fr.NhanVienText = person.Ten;
                         fr.NhanVienChucvu = person.Chucvu;
+                        fr.nhanviensdt = person.SDT;
+                        nvien = new clsNhanvien(person.SDT);
+
                         this.Hide();
                         fr.ShowDialog();
                         this.Close();

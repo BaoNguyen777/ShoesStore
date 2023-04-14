@@ -32,12 +32,19 @@ namespace Appbangiay
             get { return btnNhanVien.Text; }
             set { btnNhanVien.Text = value; }
         }
-        
+        public string nvsdt;
+        public string nhanviensdt
+        {
+            get { return nvsdt; }
+            set { nvsdt = value; }
+        }
+
+
 
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
-            {  new SanPham(), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung(), new admin()};
+            {  new SanPham(nvsdt), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung(), new admin()};
 
             navigationControl = new NavigationControl(userControls, panel1);
             navigationControl.Display(0);

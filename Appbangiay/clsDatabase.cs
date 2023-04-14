@@ -11,7 +11,7 @@ namespace Appbangiay
 
     class connectionString
     {
-        public static string con = "Server=LAPTOP-Q056MBAS\\SQLEXPRESS;Database=QLShopGiay;integrated security=true";
+        public static string con = "Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true";
     }
     internal class clsDatabase
     {
@@ -22,7 +22,7 @@ namespace Appbangiay
         {
             try
             {
-                con = new SqlConnection("Server=LAPTOP-Q056MBAS\\SQLEXPRESS;Database=QLShopGiay;integrated security=true");
+                con = new SqlConnection("Server=DESKTOP-98P71O3;Database=QLShopGiay;integrated security=true");
                 con.Open();
             }
             catch (Exception)
