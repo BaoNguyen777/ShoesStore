@@ -44,7 +44,7 @@ namespace Appbangiay
         private void InitializeNavigationControl()
         {
             List<UserControl> userControls = new List<UserControl>()
-            {  new SanPham(nvsdt), new UserControls.HoaDon(), new DoanhThu(), new NguoiDung(), new admin()};
+            {  new SanPham(nvsdt), new UserControls.HoaDon(), new DoanhThu(), new admin()};
 
             navigationControl = new NavigationControl(userControls, panel1);
             navigationControl.Display(0);
@@ -111,7 +111,7 @@ namespace Appbangiay
         {
             if (a[0] == '0') // admin
             {
-                navigationControl.Display(4);
+                navigationControl.Display(3);
             }
             else 
             {
