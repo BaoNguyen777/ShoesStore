@@ -27,7 +27,7 @@ namespace Appbangiay.UserControls
                         cmd.CommandType = CommandType.StoredProcedure;
                         Home hm = new Home();
 
-                        cmd.Parameters.AddWithValue("@masp", MaSanPhamTxt.Text);
+                        cmd.Parameters.AddWithValue("@masp", MaSPTxt.Text);
                         cmd.Parameters.AddWithValue("@nvsdt", Login.nvien.sdtnv);
                         cmd.Parameters.AddWithValue("@kichco", KichCoTxt.Text);
                         cmd.Parameters.AddWithValue("@soluongnhap", SoLuongTxt.Text);
@@ -113,10 +113,10 @@ namespace Appbangiay.UserControls
                     {
                         if (reader.Read())
                         {
-                            textBox1.Text = reader["hhID"].ToString();
-                            textBox2.Text = reader["hhHieu"].ToString();
-                            textBox3.Text = reader["hhDonGia"].ToString();
-                            textBox4.Text = reader["hhMauSac"].ToString();
+                            MaSPTxtBox.Text = reader["hhID"].ToString();
+                            HieuTxtBox.Text = reader["hhHieu"].ToString();
+                            DonGiaTxtBox.Text = reader["hhDonGia"].ToString();
+                            MauSacTxtBox.Text = reader["hhMauSac"].ToString();
                         }
                         else
                         {
@@ -126,7 +126,7 @@ namespace Appbangiay.UserControls
                 }
                 catch (Exception ex)
                 {
-                    textBox1.Text = "Lỗi:" + ex.Message;
+                    MaSPTxtBox.Text = "Lỗi:" + ex.Message;
 
                 }
 
@@ -138,25 +138,44 @@ namespace Appbangiay.UserControls
 
         private void UpdSPbtn_Click(object sender, EventArgs e)
         {
+            try {
+                string str = "UPDATE hanghoa SET hhDonGia = @hhdongia, hhHieu = @hhhieu, hhMauSac = @hhmausac WHERE hhID = @hhID";
+                clsDatabase.OpenConnection();
+                SqlCommand cmd = new SqlCommand(str, clsDatabase.con);
+                cmd.Parameters.Add("@hhdongia", SqlDbType.Int).Value = int.Parse(DonGiaTxtBox.Text);
+                cmd.Parameters.Add("@hhhieu", SqlDbType.VarChar).Value = HieuTxtBox.Text;
+                cmd.Parameters.Add("@hhmausac", SqlDbType.VarChar).Value = MauSacTxtBox.Text;
+                cmd.Parameters.Add("@hhID", SqlDbType.VarChar).Value = MaSPTxtBox.Text;
+                cmd.ExecuteNonQuery();
+                clsDatabase.CloseConnection();
 
+                TbaoTxt1.Text = "Đã cập nhật thành công";
+            }
+            catch(Exception e1)
+            {
+                TbaoTxt1.Text = "Cập nhật sản phẩm thất bại!"+e1.Message;
+            }
+            
         }
+
 
         private void DelSPbtn_Click(object sender, EventArgs e)
         {
-            string str1 = "DELETE FROM hanghoa WHERE hhID=@hhID";
-            string str2 = "DELETE FROM tonkho WHERE hhID=@hhID";
-            string str3 = "DELETE FROM lichsunhaphang WHERE hhID=@hhID";
-            clsDatabase.OpenConnection();
-            SqlCommand cmd = new SqlCommand(str1, clsDatabase.con);
-            cmd.Parameters.AddWithValue("@hhID", textBox1.Text);
-            cmd.ExecuteNonQuery();
-            SqlCommand cmd1 = new SqlCommand(str2, clsDatabase.con);
-            cmd1.Parameters.AddWithValue("@hhID", textBox1.Text);
-            cmd1.ExecuteNonQuery();
-            SqlCommand cmd2 = new SqlCommand(str3, clsDatabase.con);
-            cmd2.Parameters.AddWithValue("@hhID", textBox1.Text);
-            cmd2.ExecuteNonQuery();
-            clsDatabase.CloseConnection();
+            try
+            {
+                string str = "DELETE FROM hanghoa WHERE hhID = @hhID";
+                clsDatabase.OpenConnection();
+                SqlCommand cmd = new SqlCommand(str, clsDatabase.con);
+                cmd.Parameters.Add("@hhID", SqlDbType.VarChar).Value = MaSPTxtBox.Text;
+                cmd.ExecuteNonQuery();
+                clsDatabase.CloseConnection();
+
+                TbaoTxt1.Text = "Đã xóa sản phẩm";
+            }
+            catch (Exception e1)
+            {
+                TbaoTxt1.Text = "Xóa sản phẩm thất bại!" + e1.Message;
+            }
         }
 
     }
