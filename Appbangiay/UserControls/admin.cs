@@ -56,16 +56,25 @@ namespace Appbangiay.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "Insert into nhanvien (nvsdt, nvmatkhau, nvten, nvchucvu, nvluong) values ('" + txtSDT.Text + "','" + txtMatKhau.Text + "','" + txtTen.Text + "','" + txtChucvu.Text + "'," + txtLuong.Text + ");";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            if (string.IsNullOrEmpty(txtSDT.Text) || string.IsNullOrEmpty(txtMatKhau.Text) || string.IsNullOrEmpty(txtTen.Text) || string.IsNullOrEmpty(txtChucvu.Text) || string.IsNullOrEmpty(txtLuong.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
-
+                label2.Text = "Nhập đầy đủ thông tin vào dấu (*)";
             }
+            else
+            {
+                string query = "Insert into nhanvien (nvsdt, nvmatkhau, nvten, nvchucvu, nvluong) values ('" + txtSDT.Text + "','" + txtMatKhau.Text + "','" + txtTen.Text + "','" + txtChucvu.Text + "'," + txtLuong.Text + ");";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteReader();
+                    dataNV.DataSource = getAllNhanvien().Tables[0];
+                    conn.Close();
+                    label2.Text = "Biểu mẫu nhân viên";
+
+                }
+            }
+            
         }
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -78,57 +87,85 @@ namespace Appbangiay.UserControls
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
-
+                label2.Text = "Nhập đầy đủ thông tin Số điện thoại";
+            }
+            else
+            {
+                string query = "DELETE FROM nhanvien WHERE nvsdt = '" + txtSDT.Text + "';";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteReader();
+                    dataNV.DataSource = getAllNhanvien().Tables[0];
+                    conn.Close();
+                    label2.Text = "Biểu mẫu nhân viên";
+                }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong + " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "'; ";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
-
+                label8.Text = "Nhập đầy đủ thông tin vào dấu (*)";
+            }
+            else
+            {
+                string query = "UPDATE NHANVIEN SET nvLuong = nvLuong + " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "'; ";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteReader();
+                    dataNV.DataSource = getAllNhanvien().Tables[0];
+                    conn.Close();
+                    label8.Text = "Điều chỉnh lương";
+                }
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET nvLuong = nvLuong - " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
-
+                label8.Text = "Nhập đầy đủ thông tin vào dấu (*)";
+            }
+            else
+            {
+                string query = "UPDATE NHANVIEN SET nvLuong = nvLuong - " + textBox2.Text + " WHERE nvSdt = '" + textBox1.Text + "'; ";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteReader();
+                    dataNV.DataSource = getAllNhanvien().Tables[0];
+                    conn.Close();
+                    label8.Text = "Điều chỉnh lương";
+                }
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE NHANVIEN SET  nvTen = '" + txtTen.Text + "', nvChucVu = '" + txtChucvu.Text + "', nvLuong = '" + txtLuong.Text + "' WHERE nvSdt = '" + txtSDT.Text + "';";
-            using (SqlConnection conn = new SqlConnection(connectionString.con))
+            if (string.IsNullOrEmpty(txtTen.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.ExecuteReader();
-                dataNV.DataSource = getAllNhanvien().Tables[0];
-                conn.Close();
-
+                label2.Text = "Nhập đầy đủ thông tin vào dấu (*)";
+            }
+            else
+            {
+                string query = "UPDATE NHANVIEN SET  nvTen = '" + txtTen.Text + "', nvChucVu = '" + txtChucvu.Text + "', nvLuong = '" + txtLuong.Text + "' WHERE nvSdt = '" + txtSDT.Text + "';";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.ExecuteReader();
+                    dataNV.DataSource = getAllNhanvien().Tables[0];
+                    conn.Close();
+                    label2.Text = "Biểu mẫu nhân viên";
+                }
             }
         }
 
@@ -147,6 +184,39 @@ namespace Appbangiay.UserControls
                 txtLuong.Text = dataNV.CurrentRow.Cells[3].Value.ToString();
             }
             clsDatabase.CloseConnection();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(txtmkc.Text) || string.IsNullOrEmpty(txtmkm.Text) || string.IsNullOrEmpty(txtnhaplaij.Text))
+            {
+                label12.Text = "Nhập đầy đủ thông tin";
+            }
+            else if (txtnhaplaij.Text != txtmkm.Text)
+            {
+                label12.Text = "Mật khẩu nhập lại không đúng";
+            }
+            else
+            {
+                string query = "UPDATE NHANVIEN SET nvMatKhau = '" + txtmkm.Text + "' WHERE nvSdt = '" + textBox3.Text + "' AND nvMatKhau = '" + txtmkc.Text + "';";
+                using (SqlConnection conn = new SqlConnection(connectionString.con))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    int rowsUpdated = cmd.ExecuteNonQuery();
+                    if (rowsUpdated == 0)
+                    {
+                        label12.Text = "Mật khẩu không đúng";
+                    }
+                    else
+                    {
+                        dataNV.DataSource = getAllNhanvien().Tables[0];
+                        conn.Close();
+                        label12.Text = "Đổi mật khẩu";
+                        MessageBox.Show("Đổi mật khẩu thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
     }
 }
